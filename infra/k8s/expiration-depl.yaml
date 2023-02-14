@@ -25,3 +25,7 @@ spec:
               value: "http://nats-srv:4222"
             - name: NATS_CLUSTER_ID
               value: "ticketing"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
