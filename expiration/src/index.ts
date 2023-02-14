@@ -26,6 +26,8 @@ async function bootstrap() {
     process.on('SIGTERM', () => natsWrapper.client.close)
 
     new OrderCreatedListener(natsWrapper.client).listen()
+
+    console.log('Expiration service working...')
   } catch (err) {
     console.error(err)
   }
