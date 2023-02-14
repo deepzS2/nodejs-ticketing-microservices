@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "tsx watch src/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ci": "vitest run"
   },
   "devDependencies": {
     "@types/bull": "^4.10.0",
