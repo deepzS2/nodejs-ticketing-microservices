@@ -48,12 +48,14 @@ async function bootstrap() {
     new ExpirationCompleteListener(natsWrapper.client).listen()
     new PaymentCreatedListener(natsWrapper.client).listen()
     
-    console.log('Connected to MongoDB')
+    console.log('Orders service connected to MongoDB')
   } catch (err) {
     console.error(err)
   } finally {
-    app.listen(3000, () => {
-      console.log('Listening on port 3000!')
+    const PORT = 3000
+
+    app.listen(PORT, () => {
+      console.log(`Orders service listening on port ${PORT}!`)
     })
   }
 }
