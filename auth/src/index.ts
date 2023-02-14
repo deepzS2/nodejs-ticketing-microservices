@@ -14,12 +14,14 @@ async function bootstrap() {
 
   try {
     await mongoose.connect(process.env.MONGO_URI)
-    console.log('Connected to MongoDB')
+    console.log('Authentication service connected to MongoDB')
   } catch (err) {
     console.error(err)
   } finally {
-    app.listen(3000, () => {
-      console.log('Listening on port 3000!')
+    const PORT = 3000
+
+    app.listen(PORT, () => {
+      console.log(`Authentication service listening on port ${PORT}!`)
     })
   }
 }
